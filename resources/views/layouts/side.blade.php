@@ -24,8 +24,19 @@
 
     </ul>
 </li>
+<li class="submenu">
+    <a href="#"><i class="fa  fa-list-ul"></i> <span>Tribute Module</span> <span
+            class="menu-arrow"></span></a>
+    <ul style="display: none;">
 
+        <li><a class="{{ request()->is('person') ? 'active' : '' }}"
+                href="{{ url('person') }}">Add Deceased </a></li>
+        <li><a class="{{ request()->is('view-tributes') ? 'active' : '' }}"
+                    href="{{ url('view-tributes') }}">View Tributes </a></li>
 
+    </ul>
+</li>
+@role('Admin')
                 <li class="submenu">
                     <a href="#"><i class="fa fa-cogs"></i> <span>General Settings</span> <span
                             class="menu-arrow"></span></a>
@@ -34,17 +45,17 @@
                         <li><a class="{{ request()->is('dropdown-settings') ? 'active' : '' }}"
                                 href="{{ url('dropdown-settings') }}" class="nav-sub-link">Dropdown Settings</a></li>
 
-                        @role('Admin')
+
                             <li><a class="{{ request()->is('create_user') ? 'active' : '' }}"
                                     href="{{ url('create_user') }}" class="nav-sub-link">User Management</a></li>
 
                             <li><a class="{{ request()->is('admin') ? 'active' : '' }}" href="{{ url('admin') }}"
                                     class="nav-sub-link">Role Management</a></li>
-                        @endrole
+
 
                     </ul>
                 </li>
-
+                @endrole
 
 
 

@@ -22,13 +22,14 @@
 
         <div class="card-header py-3">
             <div class="row">
-                    <div class="col-md-4"> <h3 class="card-title">Tributes Persons</h3></div>
+                    <div class="col-md-4"> <h3 class="card-title">{{$title ?? ''}}</h3></div>
                     <div class="col-md-8">
                      <div class="card-tools pull-right">
                            <div class="btn-group">
-
+@if($title == 'Deaceased Persons')
      <a  class="btn add-btn d-none d-sm-inline-block btn btn-warning shadow-sm"  href="" data-toggle="modal"
       data-target="#add_user"><i class="fa fa-plus"></i> Submit New Tribute</a>
+@endif
 
                            </div>
                      </div>

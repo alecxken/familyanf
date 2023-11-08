@@ -21,7 +21,14 @@ class TributeController extends Controller
     //
     public function persom(TributePersonDataTable $dataTable)
     {
-        return $dataTable->render('tribute.person');
+        $title ='Deaceased Persons';
+        return $dataTable->render('tribute.person',compact('title'));
+    }
+
+    public function tributes(TributeDataTable $dataTable)
+    {
+        $title ='Submited Tribute(s)';
+        return $dataTable->render('tribute.person',compact('title'));
     }
 
     public function storeuser(Request $request)
@@ -36,7 +43,7 @@ class TributeController extends Controller
         $media = $request->file('profile');
 
         $user = new TributePerson();
-        $user->token = 'FNFT-'.strtoupper(Token::Unique('partners', 'token', 6 ));
+        $user->token = 'FNFT-'.strtoupper(Token::Unique('tribute_people', 'token', 6 ));
         if($request->hasfile('profile'))
 
              {

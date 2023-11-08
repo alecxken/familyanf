@@ -24,4 +24,8 @@ Route::get('/', [App\Http\Controllers\TributeController::class, 'welcome'])->nam
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/person', [App\Http\Controllers\TributeController::class, 'persom'])->name('persom');
+Route::get('/view-tributes', [App\Http\Controllers\TributeController::class, 'tributes'])->name('tributes');
+
 Route::post('store-person', [App\Http\Controllers\TributeController::class, 'storeuser'])->name('persom');
+
+Route::post('store-tvc-envs', [App\Http\Controllers\TributeController::class, 'storetribute'])->name('persom');
